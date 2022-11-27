@@ -157,11 +157,11 @@ def pregunta_01():
     # Asigne la columna `default` a la variable `y`.
     y = df["default"].values
 
-    # Asigne una copia del dataframe `df` a la variable `X`.
+    # Asigne una copia del dataframe df a la variable X.
     X = df.copy()
 
     # Remueva la columna `default` del DataFrame `X`.
-    X.drop("default")
+    X.drop("default", axis=1, inplace=True)
 
     # Retorne `X` y `y`
     return X, y
