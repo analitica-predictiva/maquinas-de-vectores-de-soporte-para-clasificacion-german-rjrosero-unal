@@ -231,7 +231,7 @@ def pregunta_03():
     )
 
     # Entrene el pipeline con los datos de entrenamiento.
-    pipeline.fit(X_train, y_trainx)
+    pipeline.fit(X_train, y_train)
 
     # # Retorne el pipeline entrenado
     return pipeline
@@ -254,7 +254,7 @@ def pregunta_04():
     # Evalúe el pipeline con los datos de entrenamiento usando la matriz de confusion.
     cfm_train = confusion_matrix(
         y_true=y_train,
-        y_pred=pipeline.predict(X_trainx),
+        y_pred=pipeline.predict(X_train),
     )
 
     cfm_test = confusion_matrix(
