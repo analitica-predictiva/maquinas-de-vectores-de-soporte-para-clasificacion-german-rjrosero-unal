@@ -196,8 +196,7 @@ def pregunta_03():
     Especificación y entrenamiento del modelo.
     """
 
-    # Importe ColumnTransformer
-    from sklearn.compose import ColumnTransformer
+    from sklearn.compose import make_column_selector, make_column_transformer
 
     # Importe SVC
     from sklearn.svm import SVC
@@ -214,9 +213,8 @@ def pregunta_03():
     # Cree un objeto ColumnTransformer que aplique OneHotEncoder a las columnas
     # tipo texto. Use make_column_selector para seleccionar las columnas. Las
     # columnas numéricas no deben ser transformadas.
-    columnTransformer = ColumnTransformer(
+    columnTransformer = make_column_transformer(
         (
-            "onehotencoder",
             OneHotEncoder(),
             make_column_selector(dtype_include=object),
         ),
